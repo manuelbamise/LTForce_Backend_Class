@@ -1,51 +1,17 @@
-// const list_of_cars: string[] = ['toyota', 'camry', 'lexus', 'tycan'];
+import express, { type Request, type Response } from "express";
+import mainRouter from "./main.route.js";
 
-// const var4: string
+const app = express();
+const port = 3300;
 
-// interface obj1 {
-//   name: string;
-//   age: number;
-//   isStudent: boolean;
-//   pGrade: grade;
-// }
+app.use(express.json());
 
-// enum grade {
-//   js1,
-//   js2,
-//   js3,
-//   ss1,
-//   ss2,
-//   ss3,
-// }
+app.use("/api", mainRouter);
 
-// const obj1: obj1[] = [
-//   {
-//     name: 'ade',
-//     age: 14,
-//     isStudent: false,
-//     pGrade: grade.ss2,
-//   },
-//   {
-//     name: 'mary',
-//     age: 25,
-//     isStudent: true,
-//     pGrade: grade.ss3,
-//   },
-//   {
-//     name: 'felix',
-//     age: 45,
-//     isStudent: true,
-//     pGrade: grade.js3,
-//   },
-// ];
+app.get("/health", (req, res) => {
+  return res.json({ message: "server is running well" });
+});
 
-const newFunc = (x: number, y: number): number => {
-  return x + y;
-};
-
-const num1 = 24;
-const num2 = 16;
-
-const result = newFunc(num1, num2);
-
-console.log(typeof result);
+app.listen(port, () => {
+  console.log("Server listening on port:3300");
+});
