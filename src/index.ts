@@ -9,7 +9,17 @@ app.use(express.json());
 app.use("/api", mainRouter);
 
 app.get("/health", (req, res) => {
-  return res.json({ message: "server is running well" });
+  return res.send("server is running well");
+});
+
+app.post("/test_send", (req: Request, res: Response) => {
+  const { name } = req.body;
+
+  if (!name) {
+    return res.status(400).send("name is required");
+  }
+
+  return res.send(`Hello ${name}`);
 });
 
 app.listen(port, () => {
