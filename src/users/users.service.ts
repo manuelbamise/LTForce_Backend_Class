@@ -13,4 +13,17 @@ export class UsersService {
       { name: "jane", email: "jane@example.com" },
     ];
   }
+
+  async getDataForMark() {
+    const markData = await fetch("https://api.genderize.io/?name=mark");
+
+    const data = await markData.json();
+    return data;
+  }
+
+  async queryGenderizeApi(name: string) {
+    const response = await fetch(`https://api.genderize.io/?name=${name}`);
+    const data = await response.json();
+    return data;
+  }
 }

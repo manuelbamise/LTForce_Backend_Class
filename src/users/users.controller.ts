@@ -30,4 +30,18 @@ export class UsersController {
 
     // const user = await this.usersService.
   }
+
+  async getUserForMark(req: Request, res: Response) {
+    const data = await this.usersService.getDataForMark();
+
+    res.status(200).json({ status: "success", data });
+  }
+
+  async queryGenderizeApi(req: Request, res: Response) {
+    const { name } = req.body;
+
+    const data = await this.usersService.queryGenderizeApi(name);
+
+    res.status(200).json({ status: "success", data });
+  }
 }
