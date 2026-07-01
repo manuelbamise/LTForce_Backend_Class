@@ -4,6 +4,8 @@ import mainRouter from "./main.route.js";
 const app = express();
 const port = 3300;
 
+// GET, POST(body, params), http status codes, error handling,
+
 app.use(express.json());
 
 app.use("/api", mainRouter);
