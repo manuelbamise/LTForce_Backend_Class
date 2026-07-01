@@ -1,13 +1,11 @@
 {
   "type": "module",
+  "name": "ltforce-backend-class",
   "scripts": {
-    "start": "tsx --watch ./src/index.ts",
-    "build": "npx tsc",
-    "runjs": "node ./dist/index.js"
+    "start": "tsx --watch ./src/index.ts"
   },
   "devDependencies": {
-    "@types/node": "^25.9.1",
-    "ts-node": "^10.9.2",
+    "@types/node": "^26.1.0",
     "tsx": "^4.22.4",
     "typescript": "^6.0.3"
   },

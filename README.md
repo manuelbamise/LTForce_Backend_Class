@@ -1,1 +1,1 @@
-# Ltforce Backend Development codebase
+# LTForce Software Engineering cohort class
